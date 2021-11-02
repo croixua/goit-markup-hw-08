@@ -1,0 +1,104 @@
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    justify-content: space-between;
+  }
+}
+.header__logo {
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
+  }
+}
+.header__nav {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.nav-list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.nav__item + .nav__item {
+  margin-left: 50px;
+}
+
+.nav__link {
+  position: relative;
+  display: block;
+  padding: 32px 0;
+
+  /* Typography */
+  @include font($fw: 500, $fz: 14px, $lh: 16px, $ls: 0.02em);
+  color: var(--secondary-text-color);
+}
+
+.header__contacts {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+}
+.contacts-list__item + .contacts-list__item {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: 50px;
+  }
+}
+.contacts-list__link {
+  padding: 32px 0;
+  @include font($fw: 500, $fz: 14px, $lh: 16px, $ls: 0.02em);
+  color: var(--primary-text-color);
+  @media screen and (min-width: 1200px) {
+    @include centred();
+  }
+}
+.contacts-list__icon {
+  margin-right: 10px;
+  fill: currentColor;
+  .contacts-list__link:hover &,
+  .contacts-list__link:focus & {
+    fill: currentColor;
+  }
+}
+//  TEST
+
+.menu-open-btn {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  display: block;
+  margin-left: auto;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.menu-open-btn > span {
+  display: block;
+
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+}

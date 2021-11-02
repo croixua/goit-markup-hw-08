@@ -1,0 +1,25 @@
+@mixin centred() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin font($fw: 400, $fz: 14px, $lh: 1, $ls: 0.03em, $tt: none) {
+  font-weight: $fw;
+  font-size: $fz;
+  line-height: $lh / $fz;
+  letter-spacing: $ls;
+  text-transform: $tt;
+}
+
+@mixin transition($pr: color) {
+  transition: $pr 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// @mixin transition-base($properties...){
+//   // Свойство transition-property по-умолчанию равно значению all
+//   // т.е. запись transition: 250ms ease 0s; будет
+//   // эквивалентна записи transition: all 250ms ease 0s;
+//   transition: 250ms ease 0s;
+//   @if length($properties) > 0 {
+//     transition-property: $properties;

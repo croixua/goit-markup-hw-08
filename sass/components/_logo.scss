@@ -1,0 +1,22 @@
+.logo {
+  /* Typography */
+  font-family: 'Raleway', sans-serif;
+  @include font($fw: 700, $fz: 26px, $lh: 31px);
+  color: var(--accent-color);
+
+  &:hover .logo_primary-color,
+  &:focus .logo_primary-color,
+  &:hover .logo_secondary-color,
+  &:focus .logo_secondary-color {
+    color: var(--accent-color);
+  }
+}
+
+.logo_primary-color {
+  color: var(--primary-logo-color);
+  @include transition();
+}
+.logo_secondary-color {
+  color: var(--third-text-color);
+  @include transition();
+}
