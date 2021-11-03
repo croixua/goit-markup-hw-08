@@ -6,10 +6,6 @@
     margin: -7px -4px;
     max-width: 450px;
   }
-  @media screen and (min-width: 451px) and (max-width: 767px) {
-    margin: 0 auto;
-    justify-content: center;
-  }
   @media screen and (min-width: 768px) and (max-width: 1199px) {
   }
   @media screen and (min-width: 1200px) {
@@ -131,7 +127,7 @@
 
   color: var(--third-text-color);
   background-color: var(--accent-color);
-  transform: translateY(295px);
+  transform: translateY(380px);
   @include transition(transform);
   .portfolio-grid__link:focus &,
   .portfolio-grid__link:hover & {

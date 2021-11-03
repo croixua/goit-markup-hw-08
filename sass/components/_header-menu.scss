@@ -1,0 +1,66 @@
+// MENU
+
+.header-menu {
+  position: fixed;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+// NAV
+
+.menu-nav__item + .menu-nav__item {
+  margin-top: 32px;
+}
+.menu-nav__link {
+  @include font($fw: 500, $fz: 40px, $lh: 47px, $ls: 0.02em);
+  color: var(--secondary-text-color);
+}
+
+// CONTACTS
+
+.menu-contacts {
+  margin-top: auto;
+}
+
+.menu-contacts {
+  margin-top: auto;
+  margin-bottom: 64px;
+}
+
+.menu-contacts__item + .menu-contacts__item {
+  margin-top: 32px;
+}
+
+.menu-contacts__link_tel {
+  @include font($fw: 500, $fz: 34px, $lh: 40px, $ls: 0.02em);
+  color: var(--accent-color);
+}
+
+.menu-contacts__link_email {
+  @include font($fw: 500, $fz: 24px, $lh: 28px, $ls: 0.02em);
+}
+
+// BTN
+.menu__close-back {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  top: 10px;
+  right: 15px;
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+.menu__close-back_icon {
+  fill: #212121;
+  @include transition(fill);
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
+}

@@ -47,3 +47,29 @@
 .social-list__icon {
   fill: currentColor;
 }
+
+// MENU
+
+.social-list_menu {
+  position: relative;
+}
+.social-list__item_menu {
+  & + & {
+    margin-left: 20px;
+  }
+  &:not(:first-child)::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    margin-left: -10px;
+    background-color: rgba(33, 33, 33, 0.2);
+    position: absolute;
+  }
+}
+
+.social-list__link_menu {
+  color: var(--accent-color);
+  @include font($fw: 500, $fz: 18px, $lh: 20px, $ls: 0.02em);
+}

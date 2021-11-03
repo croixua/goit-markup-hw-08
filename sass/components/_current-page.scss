@@ -1,17 +1,20 @@
 .nav__link_current-page {
   color: var(--accent-color);
+
   &::after {
-    content: '';
+    @media screen and (min-width: 768px) {
+      content: '';
 
-    display: block;
-    height: 4px;
-    width: 100%;
+      display: block;
+      height: 4px;
+      width: 100%;
 
-    position: absolute;
-    bottom: 0;
-    transform: translateY(1px);
+      position: absolute;
+      bottom: 0;
+      transform: translateY(1px);
 
-    background: var(--accent-color);
-    border-radius: 2px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
   }
 }

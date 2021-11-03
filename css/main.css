@@ -149,6 +149,34 @@ a:hover, a:focus {
   fill: currentColor;
 }
 
+.social-list_menu {
+  position: relative;
+}
+
+.social-list__item_menu + .social-list__item_menu {
+  margin-left: 20px;
+}
+
+.social-list__item_menu:not(:first-child)::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 1px;
+  top: 0;
+  margin-left: -10px;
+  background-color: rgba(33, 33, 33, 0.2);
+  position: absolute;
+}
+
+.social-list__link_menu {
+  color: var(--accent-color);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.11111;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
 .btn {
   display: flex;
   justify-content: center;
@@ -175,16 +203,18 @@ a:hover, a:focus {
   color: var(--accent-color);
 }
 
-.nav__link_current-page::after {
-  content: '';
-  display: block;
-  height: 4px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  transform: translateY(1px);
-  background: var(--accent-color);
-  border-radius: 2px;
+@media screen and (min-width: 768px) {
+  .nav__link_current-page::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(1px);
+    background: var(--accent-color);
+    border-radius: 2px;
+  }
 }
 
 .logo {
@@ -273,13 +303,38 @@ a:hover, a:focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 528px;
-  min-height: 580px;
   padding: 40px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
+
+@media screen and (max-width: 400px) {
+  .modal {
+    padding: 40px 20px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .modal {
+    width: 95vw;
+    min-height: 609px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .modal {
+    width: 450px;
+    min-height: 609px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    min-height: 580px;
+  }
 }
 
 .modal__close-back {
@@ -314,11 +369,29 @@ a:hover, a:focus {
 }
 
 .modal__title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.1;
   color: var(--secondary-text-color);
   margin-bottom: 12px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1199px) {
+  .modal__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+    text-transform: none;
+  }
 }
 
 .modal-form__field {
@@ -340,6 +413,7 @@ a:hover, a:focus {
 
 .modal-form__input {
   width: 100%;
+  height: 40px;
   padding: 12px;
   padding-left: 41px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -388,8 +462,6 @@ a:hover, a:focus {
 }
 
 .modal-form__check {
-  display: flex;
-  justify-content: center;
   margin-bottom: 40px;
 }
 
@@ -398,19 +470,44 @@ a:hover, a:focus {
   color: var(--accent-color);
 }
 
+@media screen and (max-width: 443px) {
+  .modal-form__agree-link {
+    margin-top: 3px;
+  }
+}
+
 .modal-form__check-text {
   display: flex;
   align-items: center;
-  font-size: 14px;
-  line-height: 1.71;
+  flex-wrap: wrap;
   color: var(--primary-text-color);
+}
+
+@media screen and (min-width: 320px) and (max-width: 1199px) {
+  .modal-form__check-text {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.27273;
+    letter-spacing: 0.03em;
+    text-transform: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal-form__check-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71429;
+    letter-spacing: 0.03em;
+    text-transform: none;
+  }
 }
 
 .modal-form__check-box-custom {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 9px;
+  margin-right: 8px;
   width: 16px;
   height: 15px;
   border-radius: 2px;
@@ -462,6 +559,80 @@ a:hover, a:focus {
   .list__item + .list__item + .list__item + .list__item {
     margin-left: 30px;
   }
+}
+
+.header-menu {
+  position: fixed;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.menu-nav__item + .menu-nav__item {
+  margin-top: 32px;
+}
+
+.menu-nav__link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.175;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--secondary-text-color);
+}
+
+.menu-contacts {
+  margin-top: auto;
+}
+
+.menu-contacts {
+  margin-top: auto;
+  margin-bottom: 64px;
+}
+
+.menu-contacts__item + .menu-contacts__item {
+  margin-top: 32px;
+}
+
+.menu-contacts__link_tel {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.17647;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--accent-color);
+}
+
+.menu-contacts__link_email {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16667;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.menu__close-back {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  top: 10px;
+  right: 15px;
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.menu__close-back_icon {
+  fill: #212121;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu__close-back_icon:hover, .menu__close-back_icon:focus {
+  fill: var(--accent-color);
 }
 
 .header {
@@ -579,8 +750,16 @@ a:hover, a:focus {
   border: none;
   background-color: transparent;
   padding: 0px;
+  width: 40px;
+  height: 40px;
   display: block;
   margin-left: auto;
+  fill: #212121;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-open-btn:hover, .menu-open-btn:focus {
+  fill: var(--accent-color);
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -594,13 +773,6 @@ a:hover, a:focus {
   .menu-open-btn {
     display: none;
   }
-}
-
-.menu-open-btn > span {
-  display: block;
-  width: 40px;
-  height: 40px;
-  background-color: #ccc;
 }
 
 .hero {
@@ -1114,13 +1286,6 @@ a:hover, a:focus {
   }
 }
 
-@media screen and (min-width: 451px) and (max-width: 767px) {
-  .portfolio-filter {
-    margin: 0 auto;
-    justify-content: center;
-  }
-}
-
 @media screen and (min-width: 1200px) {
   .portfolio-filter {
     display: flex;
@@ -1257,7 +1422,7 @@ a:hover, a:focus {
   text-transform: none;
   color: var(--third-text-color);
   background-color: var(--accent-color);
-  transform: translateY(295px);
+  transform: translateY(380px);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 

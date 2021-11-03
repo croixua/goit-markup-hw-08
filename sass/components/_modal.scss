@@ -21,8 +21,6 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  width: 528px;
-  min-height: 580px;
   padding: 40px;
 
   @include transition(transform);
@@ -31,6 +29,21 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  @media screen and (max-width: 400px) {
+    padding: 40px 20px;
+  }
+  @media screen and (max-width: 479px) {
+    width: 95vw;
+    min-height: 609px;
+  }
+  @media screen and (min-width: 480px) and (max-width: 1199px) {
+    width: 450px;
+    min-height: 609px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    min-height: 580px;
+  }
 }
 
 // modal close btn
@@ -69,12 +82,17 @@
 // modal title
 
 .modal__title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.1;
   color: var(--secondary-text-color);
 
   margin-bottom: 12px;
+
+  @media screen and (min-width: 320px) and (max-width: 1199px) {
+    @include font($fw: 700, $fz: 20px, $lh: 30px);
+    text-align: center;
+  }
+  @media screen and (min-width: 1200px) {
+    @include font($fw: 700, $fz: 20px, $lh: 23px);
+  }
 }
 
 // form field
@@ -98,6 +116,7 @@
 
 .modal-form__input {
   width: 100%;
+  height: 40px;
   padding: 12px;
   padding-left: 41px;
 
@@ -149,27 +168,35 @@
 //  modal-form__check
 
 .modal-form__check {
-  display: flex;
-  justify-content: center;
   margin-bottom: 40px;
 }
 
 .modal-form__agree-link {
   text-decoration: underline;
   color: var(--accent-color);
+
+  @media screen and (max-width: 443px) {
+    margin-top: 3px;
+  }
 }
 .modal-form__check-text {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
-  font-size: 14px;
-  line-height: 1.71;
   color: var(--primary-text-color);
+
+  @media screen and (min-width: 320px) and (max-width: 1199px) {
+    @include font($fz: 11px, $lh: 14px);
+  }
+  @media screen and (min-width: 1200px) {
+    @include font($fz: 14px, $lh: 24px);
+  }
 }
 
 .modal-form__check-box-custom {
   @include centred();
-  margin-right: 9px;
+  margin-right: 8px;
   width: 16px;
   height: 15px;
 

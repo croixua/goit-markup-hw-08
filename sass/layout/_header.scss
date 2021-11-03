@@ -84,8 +84,16 @@
   border: none;
   background-color: transparent;
   padding: 0px;
+  width: 40px;
+  height: 40px;
   display: block;
   margin-left: auto;
+  fill: #212121;
+  @include transition(fill);
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
   @media screen and (min-width: 320px) and (max-width: 767px) {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -93,12 +101,4 @@
   @media screen and (min-width: 768px) {
     display: none;
   }
-}
-
-.menu-open-btn > span {
-  display: block;
-
-  width: 40px;
-  height: 40px;
-  background-color: #ccc;
 }
