@@ -2,6 +2,7 @@
 
 .header-menu {
   position: fixed;
+  z-index: 999;
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
@@ -56,7 +57,7 @@
   height: 40px;
   display: block;
 }
-.menu__close-back_icon {
+.menu__close-back {
   fill: #212121;
   @include transition(fill);
   &:hover,
