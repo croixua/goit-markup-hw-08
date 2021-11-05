@@ -5,11 +5,12 @@
 
 .footer__container {
   display: flex;
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    flex-direction: column;
-    align-items: center;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: baseline;
@@ -20,24 +21,21 @@
 }
 
 .footer__adress {
-  @media screen and (min-width: 320px) and (max-width: 1199px) {
-    text-align: center;
-    margin-bottom: 60px;
-  }
+  text-align: center;
+  margin-bottom: 60px;
+
   @media screen and (min-width: 1200px) {
     margin-right: 70px;
   }
 }
 
 .footer__social {
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    text-align: center;
-    margin-bottom: 60px;
-  }
+  text-align: center;
+  margin-bottom: 60px;
+
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     text-align: center;
-  }
-  @media screen and (min-width: 1200px) {
+    margin-bottom: 0px;
   }
 }
 
@@ -73,11 +71,8 @@
 }
 
 .footer__subscribe {
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    width: 100%;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-  }
+  width: 100%;
+
   @media screen and (min-width: 1200px) {
     width: 570px;
     margin-left: auto;
@@ -85,16 +80,12 @@
 }
 
 .form-footer {
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
   @media screen and (min-width: 1200px) {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
   }
 }
@@ -117,14 +108,14 @@
     @include font($fz: 16px, $lh: 20px);
     color: rgba(255, 255, 255, 0.6);
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    width: 100%;
+
+  width: 100%;
+
+  @media screen and (max-width: 1199px) {
     max-width: 450px;
     margin-bottom: 20px;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    width: 450px;
-    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
   @media screen and (min-width: 1200px) {
     margin-right: 10px;
@@ -132,7 +123,7 @@
   }
 }
 .form-footer__btn {
-  @media screen and (min-width: 320px) and (max-width: 1199px) {
+  @media screen and (max-width: 1199px) {
     margin: 0 auto;
   }
 }
