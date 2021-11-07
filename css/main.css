@@ -508,6 +508,10 @@ a:hover, a:focus {
   margin: 0 auto;
 }
 
+.backdrop-menu {
+  padding: 0px;
+}
+
 .header-menu {
   position: fixed;
   z-index: 999;
@@ -989,6 +993,7 @@ a:hover, a:focus {
 
 @media screen and (min-width: 1200px) {
   .clients__item {
+    margin: 0;
     flex-basis: calc((100% - 12 * 15px) / 6);
   }
   .clients__item + .clients__item {

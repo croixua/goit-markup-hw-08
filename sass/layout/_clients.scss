@@ -19,6 +19,7 @@
     flex-basis: calc((100% - 6 * 15px) / 3);
   }
   @media screen and (min-width: 1200px) {
+    margin: 0;
     flex-basis: calc((100% - 12 * 15px) / 6);
     & + & {
       margin-left: 30px;
